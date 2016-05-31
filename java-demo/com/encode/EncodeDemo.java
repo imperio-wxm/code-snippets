@@ -1,4 +1,4 @@
-package com.wxmimperio;
+package com.encode;
 
 /**
  * Created by wxmimperio on 2016/5/31.
