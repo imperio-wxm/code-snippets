@@ -7,6 +7,9 @@ package com.fileopts;
 import com.utils.GetPath;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Arrays;
 
 /**
  * RandomAccessFile
@@ -32,9 +35,43 @@ public class RafDemo {
         //得到父级目录
         String file_path = getPath.getCurrentPath() + "com/files/file_test.txt";
 
-        System.out.println(file_path);
+        //System.out.println(file_path);
 
-        File file = new File(file_path);
-        System.out.println(file.exists());
+        RandomAccessFile raf = null;
+
+        try {
+            raf = new RandomAccessFile(new File(file_path), "rwd");
+
+            //获取文件指针
+            System.out.println(raf.getFilePointer());
+
+            //写入，只写一个字节
+            //raf.write('A');
+
+            //raf.writeUTF("raf的writeChars方法");
+
+            //将文件指针移到头部
+            raf.seek(0);
+
+            //一次性将文件中的内容读取，全部读到字节数组中
+            byte[] bytes = new byte[(int) raf.length()];
+            raf.read(bytes);
+            System.out.println(Arrays.toString(bytes));
+
+            //转成string
+            String string = new String(bytes, "utf-8");
+            System.out.println(string);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(raf != null) {
+                try {
+                    raf.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
