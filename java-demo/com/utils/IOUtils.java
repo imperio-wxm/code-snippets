@@ -1,9 +1,6 @@
 package com.utils;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by wxmimperio on 2016/6/1.
@@ -132,6 +129,66 @@ public class IOUtils {
         if (out != null) {
             try {
                 out.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * DataInputStream的操作
+     * @param fileName
+     */
+    public static DataInputStream DataInputStreamOpts(String fileName) {
+        DataInputStream dis = null;
+
+        try {
+            //DataOutputStream需要对FileOutputStream进行包装
+            dis = new DataInputStream(new FileInputStream(fileName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dis;
+    }
+
+    /**
+     * DataOutputStream的操作
+     * @param fileName
+     */
+    public static DataOutputStream DataOutputStreamOpts(String fileName) {
+        DataOutputStream dos = null;
+
+        try {
+            //DataOutputStream需要对FileOutputStream进行包装
+            dos = new DataOutputStream(new FileOutputStream(fileName, true));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return dos;
+    }
+
+    /**
+     * DataOutputStream的关闭
+     * @param dos
+     */
+    public static void DataOutputStreamClose(DataOutputStream dos) {
+        if (dos != null) {
+            try {
+                dos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * DataInputStream的关闭
+     * @param dis
+     */
+    public static void DataInputStreamClose(DataInputStream dis) {
+        if (dis != null) {
+            try {
+                dis.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
