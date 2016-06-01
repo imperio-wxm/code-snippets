@@ -332,6 +332,7 @@ public class IOUtils {
 
     /**
      * FileReader操作
+     *
      * @param fileName
      * @return
      */
@@ -348,6 +349,7 @@ public class IOUtils {
 
     /**
      * FileWriter操作
+     *
      * @param fileName
      * @return
      */
@@ -365,6 +367,7 @@ public class IOUtils {
 
     /**
      * FileReader关闭
+     *
      * @param fr
      */
     public static void FileReaderClose(FileReader fr) {
@@ -379,12 +382,79 @@ public class IOUtils {
 
     /**
      * FileReader关闭
+     *
      * @param fW
      */
     public static void FileWriterClose(FileWriter fW) {
         if (fW != null) {
             try {
                 fW.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * BufferedReader操作
+     *
+     * @param fileName
+     * @return
+     */
+    public static BufferedReader BufferedReaderOpt(String fileName) {
+        BufferedReader br = null;
+
+        try {
+            br = new BufferedReader(new InputStreamReader(
+                    new FileInputStream(fileName), "utf-8"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return br;
+    }
+
+    /**
+     * BufferedWriter操作
+     *
+     * @param fileName
+     * @return
+     */
+    public static BufferedWriter BufferedWriterOpt(String fileName) {
+        BufferedWriter bw = null;
+
+        try {
+            bw = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(fileName), "utf-8"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bw;
+    }
+
+    /**
+     * BufferedWriter关闭
+     *
+     * @param bw
+     */
+    public static void BufferedWriterClose(BufferedWriter bw) {
+        if (bw != null) {
+            try {
+                bw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * BufferedWriter关闭
+     *
+     * @param br
+     */
+    public static void BufferedReaderClose(BufferedReader br) {
+        if (br != null) {
+            try {
+                br.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
