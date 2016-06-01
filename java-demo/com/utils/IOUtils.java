@@ -202,6 +202,7 @@ public class IOUtils {
 
     /**
      * BufferedInputStream操作
+     *
      * @param fileName
      * @return
      */
@@ -219,6 +220,7 @@ public class IOUtils {
 
     /**
      * BufferedOutputStream操作
+     *
      * @param fileName
      * @return
      */
@@ -235,6 +237,7 @@ public class IOUtils {
 
     /**
      * BufferedInputStream的关闭
+     *
      * @param bis
      */
     public static void BufferedInputStreamClose(BufferedInputStream bis) {
@@ -249,12 +252,139 @@ public class IOUtils {
 
     /**
      * BufferedOutputStream的关闭
+     *
      * @param bos
      */
     public static void BufferedOutputStreamClose(BufferedOutputStream bos) {
         if (bos != null) {
             try {
                 bos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * InputStreamReader操作
+     *
+     * @param fileName
+     * @return
+     */
+    public static InputStreamReader InputStreamReaderOpt(String fileName) {
+        InputStreamReader isr = null;
+
+        try {
+            //指定读取编码格式
+            isr = new InputStreamReader(new FileInputStream(fileName), "utf-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return isr;
+    }
+
+    /**
+     * OutputStreamWriter操作
+     *
+     * @param fileName
+     * @return
+     */
+    public static OutputStreamWriter OutputStreamWriterOpt(String fileName) {
+        OutputStreamWriter osr = null;
+
+        try {
+            osr = new OutputStreamWriter(new FileOutputStream(fileName), "utf-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return osr;
+    }
+
+    /**
+     * InputStreamReader关闭
+     *
+     * @param isr
+     */
+    public static void InputStreamReaderClose(InputStreamReader isr) {
+        if (isr != null) {
+            try {
+                isr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * OutputStreamWriter关闭
+     *
+     * @param osr
+     */
+    public static void OutputStreamWriterClose(OutputStreamWriter osr) {
+        if (osr != null) {
+            try {
+                osr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * FileReader操作
+     * @param fileName
+     * @return
+     */
+    public static FileReader FileReaderOpt(String fileName) {
+        FileReader fr = null;
+
+        try {
+            fr = new FileReader(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fr;
+    }
+
+    /**
+     * FileWriter操作
+     * @param fileName
+     * @return
+     */
+    public static FileWriter FileWriterOpt(String fileName) {
+        FileWriter fw = null;
+
+        try {
+            //true，不覆盖，进行追加
+            fw = new FileWriter(fileName, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return fw;
+    }
+
+    /**
+     * FileReader关闭
+     * @param fr
+     */
+    public static void FileReaderClose(FileReader fr) {
+        if (fr != null) {
+            try {
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * FileReader关闭
+     * @param fW
+     */
+    public static void FileWriterClose(FileWriter fW) {
+        if (fW != null) {
+            try {
+                fW.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
