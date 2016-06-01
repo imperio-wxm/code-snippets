@@ -75,6 +75,7 @@ public class IOUtils {
 
     /**
      * 批量写文件
+     *
      * @param fileName
      * @param bytes
      * @param off
@@ -137,6 +138,7 @@ public class IOUtils {
 
     /**
      * DataInputStream的操作
+     *
      * @param fileName
      */
     public static DataInputStream DataInputStreamOpts(String fileName) {
@@ -153,6 +155,7 @@ public class IOUtils {
 
     /**
      * DataOutputStream的操作
+     *
      * @param fileName
      */
     public static DataOutputStream DataOutputStreamOpts(String fileName) {
@@ -169,6 +172,7 @@ public class IOUtils {
 
     /**
      * DataOutputStream的关闭
+     *
      * @param dos
      */
     public static void DataOutputStreamClose(DataOutputStream dos) {
@@ -183,12 +187,74 @@ public class IOUtils {
 
     /**
      * DataInputStream的关闭
+     *
      * @param dis
      */
     public static void DataInputStreamClose(DataInputStream dis) {
         if (dis != null) {
             try {
                 dis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * BufferedInputStream操作
+     * @param fileName
+     * @return
+     */
+    public static BufferedInputStream BufferedInputStreamOpts(String fileName) {
+        BufferedInputStream bis = null;
+
+        try {
+            bis = new BufferedInputStream(new FileInputStream(fileName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return bis;
+    }
+
+    /**
+     * BufferedOutputStream操作
+     * @param fileName
+     * @return
+     */
+    public static BufferedOutputStream BufferedOutputStreamOpts(String fileName) {
+        BufferedOutputStream bos = null;
+
+        try {
+            bos = new BufferedOutputStream(new FileOutputStream(fileName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bos;
+    }
+
+    /**
+     * BufferedInputStream的关闭
+     * @param bis
+     */
+    public static void BufferedInputStreamClose(BufferedInputStream bis) {
+        if (bis != null) {
+            try {
+                bis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * BufferedOutputStream的关闭
+     * @param bos
+     */
+    public static void BufferedOutputStreamClose(BufferedOutputStream bos) {
+        if (bos != null) {
+            try {
+                bos.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
