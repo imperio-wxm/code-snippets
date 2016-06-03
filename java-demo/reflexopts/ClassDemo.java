@@ -2,6 +2,7 @@ package reflexopts;
 
 /**
  * Created by wxmimperio on 2016/6/3.
+ * 初步认识Class的类类型
  */
 
 public class ClassDemo {

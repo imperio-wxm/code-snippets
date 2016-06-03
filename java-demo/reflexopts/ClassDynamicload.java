@@ -2,6 +2,7 @@ package reflexopts;
 
 /**
  * Created by wxmimperio on 2016/6/3.
+ * Class的动态加载
  */
 public class ClassDynamicload {
     public static void main(String[] args) {
