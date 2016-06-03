@@ -21,7 +21,11 @@ public class ClassBasicdata {
         System.out.println(intClass.getName());
         System.out.println(strClass.getName());
 
-        String str = "测试Class获取基本信息";
-        ClassUtils.printClassInfo(str);
+        Integer integer = 0;
+        ClassUtils.printMethodClassInfo(integer);
+        System.out.println("===================");
+        ClassUtils.printClassParamsInfo(integer);
+        System.out.println("===================");
+        ClassUtils.printClassConInfo(integer);
     }
 }
