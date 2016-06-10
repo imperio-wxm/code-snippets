@@ -1,5 +1,3 @@
-package reflexopts;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -24,10 +22,12 @@ public class Methodreflex {
             Method m = aClass.getDeclaredMethod("print", new Class[]{int.class, int.class});
             //或者
             //Method m = aClass.getDeclaredMethod("print", int.class, int.class);
-
             //方法的反射操作是利用获得的 m 对象进行方法调用
-            m.invoke(a1, new Object[]{10, 20});
+            Object o = m.invoke(a1, new Object[]{10, 20});
+            //方法没有返回值，则返回null；有具体返回值，返回返回值
 
+            Method m1 = aClass.getDeclaredMethod("print", new Class[]{String.class, String.class});
+            Object o1 = m1.invoke(a1, new Object[]{"This", "IS..."});
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -44,6 +44,6 @@ class A {
     }
 
     public void print(String a, String b) {
-        System.out.println(a.toUpperCase() + "," + b.toLowerCase());
+        System.out.println(a.toUpperCase() + " " + b.toLowerCase());
     }
 }
