@@ -19,16 +19,20 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!--id和name都行-->
-    <bean name="u" class="com.wxmimperio.dao.impl.UserDAOImpl" />
+    <bean name="userDAO" class="com.wxmimperio.dao.impl.UserDAOImpl">
+        <!--注入属性（很少用到）-->
+        <property name="daoId" value="8"></property>
+        <property name="daoStatus" value="good"></property>
+    </bean>
     <!--setter注入
     <bean id="userService" class="com.wxmimperio.service.UserService">
-        <property name="userDAO" ref="u"/>
+        <property name="userDAO" ref="userDAO"/>
     </bean>
     -->
     <!--构造方法注入-->
     <bean id="userService" class="com.wxmimperio.service.UserService">
         <constructor-arg>
-            <ref bean="u"></ref>
+            <ref bean="userDAO"></ref>
         </constructor-arg>
     </bean>
 </beans>
