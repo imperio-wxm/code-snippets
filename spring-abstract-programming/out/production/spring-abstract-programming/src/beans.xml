@@ -1,0 +1,3 @@
+<bean>
+    <bean id="u" class="com.wxmimperio.dao.impl.UserDAOImpl" />
+</bean>
