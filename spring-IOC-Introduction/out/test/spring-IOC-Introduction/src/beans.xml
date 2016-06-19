@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
        xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="
     http://www.springframework.org/schema/context
@@ -19,16 +21,57 @@
     http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!--id和name都行-->
-    <bean name="u" class="com.wxmimperio.dao.impl.UserDAOImpl" />
-    <!--setter注入
-    <bean id="userService" class="com.wxmimperio.service.UserService">
-        <property name="userDAO" ref="u"/>
-    </bean>
+    <!--
+    bean的生存范围scope
+        prototype：每次的对象不一样
+        singleton：每次的对象一样
     -->
-    <!--构造方法注入-->
+
+    <bean name="userDAO" class="com.wxmimperio.dao.impl.UserDAOImpl" scope="singleton">
+        <!--注入属性（很少用到）-->
+        <property name="daoId" value="1"></property>
+        <property name="daoStatus" value="good"></property>
+
+        <!--集合类型注入-->
+        <property name="sets">
+            <set>
+                <value>1</value>
+                <value>2</value>
+            </set>
+        </property>
+        <property name="lists">
+            <list>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </list>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="1" value="2"></entry>
+                <entry key="2" value="2"></entry>
+                <entry key="3" value="3"></entry>
+            </map>
+        </property>
+    </bean>
+
+
+    <bean name="userDAO2" class="com.wxmimperio.dao.impl.UserDAOImpl" scope="singleton">
+        <property name="daoId" value="2"></property>
+    </bean>
+
+
+    <!--setter注入-->
+    <!--autowire自动装配-->
+    <!--init-method、destroy-method是生命周期-->
+    <bean id="userService" class="com.wxmimperio.service.UserService" autowire="byName" init-method="init" destroy-method="destroy">
+    </bean>
+
+    <!--构造方法注入
     <bean id="userService" class="com.wxmimperio.service.UserService">
         <constructor-arg>
-            <ref bean="u"></ref>
+            <ref bean="userDAO1"></ref>
         </constructor-arg>
     </bean>
+    -->
 </beans>

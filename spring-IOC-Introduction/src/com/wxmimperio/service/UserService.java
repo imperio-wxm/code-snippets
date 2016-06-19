@@ -11,11 +11,11 @@ import com.wxmimperio.model.User;
 public class UserService {
     //保存一个UserDAO的引用，用来操作数据
     //面向接口编程
-
+    /*
     public UserService(UserDAO userDAO) {
         super();
         this.userDAO = userDAO;
-    }
+    }*/
 
     /**
      * 面向接口编程的灵活性
@@ -35,5 +35,13 @@ public class UserService {
     //添加用户
     public void add (User user) {
         this.userDAO.save(user);
+    }
+
+    public void init() {
+        System.out.println("This is init");
+    }
+
+    public void destroy() {
+        System.out.println("This is destroy");
     }
 }
