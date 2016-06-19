@@ -19,9 +19,7 @@ public class UserServiceTest {
         BeanFactory factory = new ClassPathXmlApplicationContext();
 
         //UserService的对象需要从配置文件中拿出来
-        UserService service = new UserService();
-        UserDAO userDAO = (UserDAO)factory.getBean("u");
-        service.setUserDAO(userDAO);
+        UserService service = (UserService)factory.getBean("userService");
         User u = new User();
         service.add(u);
     }

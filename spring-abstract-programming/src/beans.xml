@@ -1,3 +1,9 @@
 <bean>
     <bean id="u" class="com.wxmimperio.dao.impl.UserDAOImpl" />
+    <bean id="userService" class="com.wxmimperio.service.UserService">
+        <!--
+        property其实是set方法，自动装配，即注入
+        -->
+        <property name="userDAO" bean="u"/>
+    </bean>
 </bean>
