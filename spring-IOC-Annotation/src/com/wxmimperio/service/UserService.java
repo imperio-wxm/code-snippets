@@ -6,6 +6,8 @@ import com.wxmimperio.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 /**
@@ -46,10 +48,13 @@ public class UserService {
         this.userDAO.save(user);
     }
 
+    //注解初始化方法
+    @PostConstruct
     public void init() {
         System.out.println("This is init");
     }
-
+    //注解销毁方法
+    @PreDestroy
     public void destroy() {
         System.out.println("This is destroy");
     }
