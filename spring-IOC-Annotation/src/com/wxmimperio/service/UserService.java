@@ -6,6 +6,8 @@ import com.wxmimperio.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import javax.annotation.Resource;
+
 /**
  * Created by wxmimperio on 2016/6/19.
  * 业务逻辑层
@@ -32,8 +34,10 @@ public class UserService {
 
     //Autowired自动找对应类型的bean
     //Qualifier指定注入的具体bean（多个相同bean的情况下）
-    @Autowired
-    public void setUserDAO(@Qualifier("userDAO1") UserDAO userDAO) {
+    //@Autowired
+    //Resource默认是ByType注入
+    @Resource(name = "userDAO")
+    public void setUserDAO(/*@Qualifier("userDAO1")*/ UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 

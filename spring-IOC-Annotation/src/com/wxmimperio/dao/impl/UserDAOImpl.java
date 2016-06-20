@@ -2,6 +2,7 @@ package com.wxmimperio.dao.impl;
 
 import com.wxmimperio.dao.UserDAO;
 import com.wxmimperio.model.User;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,9 @@ import java.util.Set;
  * Created by wxmimperio on 2016/6/19.
  * DAO层的实现
  */
+
+//可以将类当做组件使用
+@Component("UserDAOImpl")
 public class UserDAOImpl implements UserDAO {
 
     private int daoId;
