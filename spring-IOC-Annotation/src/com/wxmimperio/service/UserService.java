@@ -35,7 +35,7 @@ public class UserService {
     //Autowired自动找对应类型的bean
     //Qualifier指定注入的具体bean（多个相同bean的情况下）
     //@Autowired
-    //Resource默认是ByType注入
+    //Resource默认是ByName注入
     @Resource(name = "userDAO")
     public void setUserDAO(/*@Qualifier("userDAO1")*/ UserDAO userDAO) {
         this.userDAO = userDAO;
