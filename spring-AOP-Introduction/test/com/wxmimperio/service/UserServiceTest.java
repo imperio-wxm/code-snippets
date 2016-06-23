@@ -42,6 +42,7 @@ public class UserServiceTest {
          * param2：被代理对象所实现的接口
          * param2：用哪个handler处理
          * 由于实现了UserDao的接口，所以可以强制转换
+         * 被代理对象的接口里有哪些方法，则生成的代理就是实现了哪些方法
          */
         UserDAO userDAOProxy = (UserDAO)Proxy.newProxyInstance(userDAO.getClass().getClassLoader(),
                 new Class[]{UserDAO.class},logInterceptor);

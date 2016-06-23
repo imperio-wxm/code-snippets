@@ -9,14 +9,14 @@ import java.lang.reflect.Method;
 public class LogInterceptor implements InvocationHandler{
     private Object target;
 
-    public void beforeMethod() {
-        System.out.println("save start");
+    public void beforeMethod(Method method) {
+        System.out.println(method.getName() + " start");
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //调用任何方法之前都调用此方法
-        beforeMethod();
+        beforeMethod(method);
         //被调函数
         method.invoke(target,args);
         return null;
