@@ -14,7 +14,7 @@ import java.util.Set;
  */
 
 //可以将类当做组件使用
-@Component("UserDAOImpl")
+//@Component("UserDAOImpl")
 public class UserDAOImpl implements UserDAO {
 
     private int daoId;

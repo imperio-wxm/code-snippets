@@ -20,6 +20,20 @@
     http://www.springframework.org/schema/util
     http://www.springframework.org/schema/util/spring-util.xsd">
 
-     <!--自动产生代理-->
+    <!--自动解析注解-->
+    <context:annotation-config></context:annotation-config>
+    <!--xml里不用再写bean，spring自动从package里找-->
+    <context:component-scan base-package="com.wxmimperio"></context:component-scan>
+
+    <!--自动产生代理-->
     <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <bean name="userDAO" class="com.wxmimperio.dao.impl.UserDAOImpl">
+    </bean>
+
+    <bean name="userDAO1" class="com.wxmimperio.dao.impl.UserDAOImpl">
+    </bean>
+
+    <bean id="userService" class="com.wxmimperio.service.UserService">
+    </bean>
 </beans>

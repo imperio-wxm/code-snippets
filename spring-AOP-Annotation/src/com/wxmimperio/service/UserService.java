@@ -49,12 +49,12 @@ public class UserService {
     }
 
     //注解初始化方法
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         System.out.println("This is init");
     }
     //注解销毁方法
-    @PreDestroy
+    //@PreDestroy
     public void destroy() {
         System.out.println("This is destroy");
     }
