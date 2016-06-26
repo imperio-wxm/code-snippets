@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f7d50ca-aef2-4423-a0b2-3e33a47778de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/spring-AOP-DataSource/.idea/workspace.xml" afterPath="$PROJECT_DIR$/out/test/spring-AOP-DataSource/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans.xml" afterPath="$PROJECT_DIR$/src/beans.xml" />
     </list>
     <ignored path="spring-IOC-Introduction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +37,8 @@
       <file leaf-file-name="UserServiceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/wxmimperio/service/UserServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="154">
+              <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -47,8 +47,23 @@
       <file leaf-file-name="beans.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
+            <state relative-caret-position="417">
+              <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+              <folding>
+                <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+                <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+                <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+                <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -116,6 +131,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/com/wxmimperio/aop/LogInterceptor.java" />
         <option value="$PROJECT_DIR$/src/com/wxmimperio/dao/impl/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/beans.xml" />
       </list>
     </option>
@@ -774,7 +790,7 @@
       <workItem from="1466825998069" duration="8736000" />
       <workItem from="1466944165624" duration="1983000" />
       <workItem from="1466947489749" duration="2510000" />
-      <workItem from="1466952050573" duration="1123000" />
+      <workItem from="1466952050573" duration="1943000" />
     </task>
     <servers />
   </component>
@@ -782,8 +798,8 @@
     <history-entry file="UserServiceTest - 2016.06.26 at 22h 47m 55s.xml">
       <configuration name="UserServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserServiceTest_add - 2016.06.19 at 22h 24m 09s.xml">
-      <configuration name="UserServiceTest.add" configurationId="JUnit" />
+    <history-entry file="UserServiceTest - 2016.06.26 at 23h 50m 25s.xml">
+      <configuration name="UserServiceTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UserServiceTest_add - 2016.06.19 at 22h 24m 20s.xml">
       <configuration name="UserServiceTest.add" configurationId="JUnit" />
@@ -811,10 +827,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27794000" />
+    <option name="totallyTimeSpent" value="28614000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -825,7 +841,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44976816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44976816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -867,18 +883,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -943,7 +957,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,7 +1027,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +1097,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,7 +1160,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,7 +1202,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1257,28 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wxmimperio/dao/impl/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
-          <folding>
-            <element signature="e#1448#1449#0" expanded="true" />
-            <element signature="e#1481#1482#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <marker date="1466948162316" expanded="true" signature="1714:1749" placeholder="INSERT INTO user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/bfe8fa15/72efb4fd-1c2a-4696-a4b9-2974bd4ceba4/myspring.user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1300,10 +1317,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wxmimperio/dao/impl/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="86" column="38" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
+          <folding>
+            <element signature="e#1448#1449#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <marker date="1466948162316" expanded="true" signature="1714:1749" placeholder="INSERT INTO user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+          <folding>
+            <element signature="n#value#0;n#property#0;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#1;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#2;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+            <element signature="n#value#0;n#property#3;n#bean#2;n#beans#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/wxmimperio/service/UserServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="154">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
           <folding />
         </state>
       </provider>
