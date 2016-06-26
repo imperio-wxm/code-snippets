@@ -1,8 +1,6 @@
 package com.wxmimperio.aop;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,7 +14,15 @@ import org.springframework.stereotype.Component;
 public class LogInterceptor {
     //在方法执行之前
     //织入点语法
-    @Before("execution(public void com.wxmimperio.dao.impl.UserDAOImpl.save(com.wxmimperio.model.User))")
+
+    /**
+     * 表示：
+     *  1.返回值是任何类型
+     *  2.com.wxmimperio.dao..（com.wxmimperio.dao下所有子包的所有类）
+     *  3..*(..)（所有方法）
+     */
+    @Before("execution(public * com.wxmimperio.dao..*.*(..))")
+    //@Before("execution(public void com.wxmimperio.dao.impl.UserDAOImpl.save(com.wxmimperio.model.User))")
     public void before() {
         System.out.println("method before");
     }
@@ -24,5 +30,25 @@ public class LogInterceptor {
     @After("execution(public void com.wxmimperio.dao.impl.UserDAOImpl.save(com.wxmimperio.model.User))")
     public void after() {
         System.out.println("method after");
+    }
+
+    /**
+     * 方法正常返回之后
+     */
+    @AfterReturning("execution(public * com.wxmimperio.dao..*.*(..))")
+    public void afterReturn() {
+        System.out.println("method after returning");
+    }
+
+    /**
+     * 抽象提出织入点语法
+     *  如果有相同的织入点语法，可以提出来
+     */
+    @Pointcut("execution(public * com.wxmimperio.dao..*.*(..))")
+    public void method() {}
+
+    @Before("method()")
+    public void beforeMethod() {
+        System.out.println("this is before method");
     }
 }
