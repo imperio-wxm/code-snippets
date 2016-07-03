@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wxmimperio.pojo">
+    <!--
+        class指映射一个实体类
+        提供了公共的无參构造方法—通过反射产生对象
+        属性用private修饰，并且生成对应的set、get方法
+        类不能用final来修饰—hibernate会产生代理类
+        类需要指明标识—主键
+        name表示实体的类名
+        table表示对应数据库中的表名
+    -->
+    <class name="User" table="user">
+        <!--
+            表的主键
+            column表示数据库中表的列名
+            type表示数据类型
+        -->
+        <id name="id" type="java.lang.Integer" column="id">
+            <!--主键生成策略-->
+            <generator class="native"></generator>
+        </id>
+        <!--实体类的名称（区分大小写）-->
+        <property name="username" type="java.lang.String" column="username"></property>
+        <property name="password" type="java.lang.String" column="password"></property>
+    </class>
+</hibernate-mapping>
