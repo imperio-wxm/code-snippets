@@ -5,12 +5,14 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
+import org.junit.Test;
 
 /**
  * Created by wxmimperio on 2016/7/2.
  */
 public class HibernateTest {
-    public static void main(String args[]) {
+    @Test
+    public void testHibernate() {
         //1.新建Configuration对象（是一个单例）
         //Configuration cfg = new Configuration().configure("/config/hibernate.cfg.xml");
 

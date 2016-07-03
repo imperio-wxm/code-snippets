@@ -15,7 +15,7 @@
         <property name="connection.url">jdbc:mysql://localhost:3306/my_hibernate</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
-        <!--数据库方言-->
+        <!--hibernate可选项-数据库方言-->
         <property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
         <!--配置hbm.xml文件-->
         <mapping resource="config/User.hbm.xml"/>
