@@ -4,7 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 /**
@@ -13,7 +12,7 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateTest {
     public static void main(String args[]) {
         //1.新建Configuration对象（是一个单例）
-        Configuration cfg = new Configuration().configure("/config/hibernate.cfg.xml");
+        //Configuration cfg = new Configuration().configure("/config/hibernate.cfg.xml");
 
         ServiceRegistry registry = null;
         //是线程安全的，属于进程级别，在集群范围内也可以使用
@@ -25,8 +24,7 @@ public class HibernateTest {
             //2.通过Configuration创建SessionFactory对象
             //hibernate3.x这种写法
             //SessionFactory sf = cfg.buildSessionFactory();
-            registry = new StandardServiceRegistryBuilder()
-                    .applySettings(cfg.getProperties()).build();
+            registry = new StandardServiceRegistryBuilder().configure("/config/hibernate.cfg.xml").build();
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
             //3.通过SessionFactory得到Session（理解为对connection对象的包装，里面有对数据库的CRUD操作）
             //Session是线程不安全的，生命周期非常短暂，常常与事务对应（称为一级缓存）
@@ -42,7 +40,7 @@ public class HibernateTest {
             user.setPassword("123456");
             //session.save(user);
             User user1 = (User) session.get(User.class, 1);
-            System.out.println(user1.getId());
+            System.out.println("name= " + user1.getUsername() + " pwd= " + user1.getPassword());
 
             //6.提交事务
             transaction.commit();
