@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1fab5f23-f14a-41ee-8baa-6ad4d5e3a2a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/wxmimperio/utils/HibernateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../hibernate5-hello/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../hibernate5-hello/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/HibernateTest.java" afterPath="$PROJECT_DIR$/test/HibernateTest.java" />
     </list>
     <ignored path="hibernate5-hello.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,8 +65,8 @@
       <file leaf-file-name="HibernateTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/HibernateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+            <state relative-caret-position="154">
+              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,8 +77,8 @@
       <file leaf-file-name="HibernateUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/wxmimperio/utils/HibernateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+            <state relative-caret-position="206">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -738,20 +737,11 @@
       <updated>1467472829283</updated>
       <workItem from="1467472831877" duration="1093000" />
       <workItem from="1467521306798" duration="8830000" />
-      <workItem from="1467539250433" duration="1915000" />
+      <workItem from="1467539250433" duration="3245000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HibernateTest - 2016.07.03 at 16h 14m 57s.xml">
-      <configuration name="HibernateTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 16h 16m 27s.xml">
-      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 16h 18m 38s.xml">
-      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 16h 22m 04s.xml">
       <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
     </history-entry>
@@ -773,9 +763,18 @@
     <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 18h 18m 26s.xml">
       <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 18h 32m 25s.xml">
+      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 18h 35m 38s.xml">
+      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HibernateTest_testHibernate - 2016.07.03 at 18h 36m 56s.xml">
+      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11838000" />
+    <option name="totallyTimeSpent" value="13168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -936,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wxmimperio/utils/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+        <state relative-caret-position="206">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -946,8 +945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/HibernateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        <state relative-caret-position="154">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
