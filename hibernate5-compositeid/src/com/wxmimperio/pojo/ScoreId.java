@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by wxmimperio on 2016/7/3.
  * 必须实现序列化接口
  */
-public class ScoreId implements Serializable{
+public class ScoreId implements Serializable {
     private String stuId;//学生编号
     private String objectId;//课程编号
 
@@ -28,6 +28,7 @@ public class ScoreId implements Serializable{
 
     /**
      * 重写hashcode、equals
+     *
      * @return
      */
     @Override
