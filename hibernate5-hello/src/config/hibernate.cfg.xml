@@ -18,6 +18,6 @@
         <!--数据库方言-->
         <property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
         <!--配置hbm.xml文件-->
-        <mapping resource="com/wxmimperio/pojo/User.hbm.xml"/>
+        <mapping resource="config/User.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
