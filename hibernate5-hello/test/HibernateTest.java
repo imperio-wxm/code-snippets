@@ -56,6 +56,9 @@ public class HibernateTest {
             if (session != null && session.isOpen()) {
                 session.close();
             }
+            if (sessionFactory != null && sessionFactory.isOpen()) {
+                sessionFactory.close();
+            }
         }
     }
 }

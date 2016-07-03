@@ -16,7 +16,14 @@
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
         <!--hibernate可选项-数据库方言-->
-        <property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+        <!--可以将数据库版本加入MySQL5InnoDBDialect-->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!--配置是否打印SQL语句-->
+        <property name="show_sql">true</property>
+        <!--格式化SQL语句 -->
+        <property name="format_sql">true</property>
+        <!--是否产生数据库信息-->
+        <property name="hbm2ddl.auto"></property>
         <!--配置hbm.xml文件-->
         <mapping resource="config/User.hbm.xml"/>
     </session-factory>
