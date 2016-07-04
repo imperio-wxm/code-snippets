@@ -24,6 +24,7 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
         <!--配置hbm.xml文件-->
-        <mapping resource="config/Score.hbm.xml"/>
+        <mapping resource="config/Score.hbm.xml"></mapping>
+        <mapping resource="config/Student.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
