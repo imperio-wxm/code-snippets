@@ -1,6 +1,4 @@
-import com.wxmimperio.pojo.Score;
-import com.wxmimperio.pojo.ScoreId;
-import com.wxmimperio.pojo.Student;
+import com.wxmimperio.pojo.*;
 import org.junit.Test;
 import com.wxmimperio.utils.HibernateUtil;
 import org.hibernate.Session;
@@ -60,6 +58,35 @@ public class HibernateTest {
             student.setIntroduce(clob);
 
             session.save(student);
+
+            transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+        } finally {
+            //游离状态
+            HibernateUtil.closeSession();
+            HibernateUtil.closeSessionFactory();
+        }
+    }
+
+    @Test
+    public void testComponent() {
+        Session session = null;
+        Transaction transaction = null;
+        Teacher teacher = new Teacher();
+        Adderss adderss = new Adderss();
+        try {
+            session = HibernateUtil.getSession();
+            transaction = HibernateUtil.getTransaction(session);
+
+            //两个对象映射成一张表
+            teacher.setName("wxmimperio");
+            teacher.setSex("男");
+            adderss.setHomeAddress("home");
+            adderss.setSchoolAdderss("school");
+            adderss.setCompanyAddress("company");
+            teacher.setAdderss(adderss);
+            session.save(teacher);
 
             transaction.commit();
         } catch (Exception e) {

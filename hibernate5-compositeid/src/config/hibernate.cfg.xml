@@ -26,5 +26,6 @@
         <!--配置hbm.xml文件-->
         <mapping resource="config/Score.hbm.xml"></mapping>
         <mapping resource="config/Student.hbm.xml"></mapping>
+        <mapping resource="config/Teacher.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
