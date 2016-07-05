@@ -74,8 +74,8 @@
       <file leaf-file-name="HibernateTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/HibernateTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+            <state relative-caret-position="74">
+              <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -806,17 +806,11 @@
       <workItem from="1467539250433" duration="6892000" />
       <workItem from="1467557139793" duration="5390000" />
       <workItem from="1467642721763" duration="1259000" />
-      <workItem from="1467725970357" duration="1944000" />
+      <workItem from="1467725970357" duration="2511000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="HibernateTest_testHibernate - 2016.07.04 at 22h 41m 22s.xml">
-      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="HibernateTest_testHibernate - 2016.07.04 at 22h 43m 45s.xml">
-      <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="HibernateTest_testHibernate - 2016.07.04 at 22h 44m 45s.xml">
       <configuration name="HibernateTest.testHibernate" configurationId="JUnit" />
     </history-entry>
@@ -838,12 +832,18 @@
     <history-entry file="HibernateTest_testOne2Many - 2016.07.05 at 22h 41m 34s.xml">
       <configuration name="HibernateTest.testOne2Many" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="HibernateTest_testOne2Many - 2016.07.05 at 22h 50m 19s.xml">
+      <configuration name="HibernateTest.testOne2Many" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="HibernateTest_testOne2Many - 2016.07.05 at 22h 51m 28s.xml">
+      <configuration name="HibernateTest.testOne2Many" configurationId="JUnit" />
+    </history-entry>
     <history-entry file="HibernateTest_testUpdate - 2016.07.03 at 20h 53m 53s.xml">
       <configuration name="HibernateTest.testUpdate" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25408000" />
+    <option name="totallyTimeSpent" value="25975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1131,8 +1131,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/HibernateTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="77" column="48" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+        <state relative-caret-position="74">
+          <caret line="78" column="17" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

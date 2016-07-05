@@ -8,6 +8,7 @@ import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialClob;
 import java.sql.Blob;
 import java.sql.Clob;
+import java.util.Iterator;
 
 /**
  * Created by wxmimperio on 2016/7/2.
@@ -55,6 +56,13 @@ public class HibernateTest {
             session = HibernateUtil.getSession();
             transaction = HibernateUtil.getTransaction(session);
 
+            /**
+             * 1.先生成student的两条数据，但是subject的外键是空的
+             * 2.生成subject数据
+             * 3.更新student的subject外键
+             *
+             * 如果student的外键设置不能为空，则先保存subject（一的一端）然后保存student（多的一端）
+             */
             student2_1.setName("student2_1");
             student2_1.setAge(20);
             student2_2.setName("student2_2");
@@ -68,7 +76,15 @@ public class HibernateTest {
             session.save(student2_2);
             session.save(subject);
 
-            //session.save(student);
+            //取数据
+            Subject subject1 = (Subject)session.get(Subject.class, 1);
+            System.out.println("subject name=" + subject1.getName());
+            System.out.println("多的一端数据：");
+            Iterator<Student2> iterator = subject1.getStudent2s().iterator();
+            while (iterator.hasNext()) {
+                Student2 tempStudent = iterator.next();
+                System.out.println("name=" + tempStudent.getName() + " age=" + tempStudent.getAge());
+            }
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
