@@ -19,9 +19,16 @@
         <property name="age" type="java.lang.Integer"></property>
         <!--多对一的写法-->
         <!--
+            cascade="save-update"
             cascade——操作级联到子实体对象
+            （默认）none，不产生级联
             save-update，保存和更新多的一端数据时，一的一端可会保存和更新
+            delete，删除操作级联，不能在多的一段操作
+            all，所有操作都级联
         -->
-        <many-to-one name="grade" class="Grade" column="grade_id" cascade="save-update"></many-to-one>
+        <!--<many-to-one name="grade" class="Grade" column="grade_id" cascade="save-update">
+        </many-to-one>-->
+        <many-to-one name="grade" class="Grade" column="grade_id">
+        </many-to-one>
     </class>
 </hibernate-mapping>

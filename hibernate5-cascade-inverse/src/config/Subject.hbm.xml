@@ -21,7 +21,12 @@
         <property name="name" type="java.lang.String"></property>
         <!--一对多的写法-->
         <!--set是student2s的集合-->
-        <set name="student2s">
+        <!--
+            inverse 由谁来管理关联关系
+                如果为false，则双方都可以管理
+                如果为true，则由设置inverse的另一方来管理
+        -->
+        <set name="student2s" inverse="false">
             <!--key表示外键-->
             <key column="subject_id"></key>
             <one-to-many class="Student2"></one-to-many>
