@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fab5f23-f14a-41ee-8baa-6ad4d5e3a2a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/wxmimperio/pojo/Student.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/wxmimperio/pojo/StudentCard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/Student.hbm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/config/StudentCard.hbm.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/com/wxmimperio/pojo/Person.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/com/wxmimperio/pojo/Person.class" afterPath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/com/wxmimperio/pojo/Person.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/com/wxmimperio/pojo/Student.class" afterPath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/com/wxmimperio/pojo/Student.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/HibernateTest.class" afterPath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/HibernateTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/com/wxmimperio/pojo/Student.class" afterPath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/com/wxmimperio/pojo/Student.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hibernate5-cascade-inverse.iml" afterPath="$PROJECT_DIR$/hibernate5-cascade-inverse.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/config/Student.hbm.xml" afterPath="$PROJECT_DIR$/out/production/hibernate5-cascade-inverse/config/Student.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/src/config/Student.hbm.xml" afterPath="$PROJECT_DIR$/out/test/hibernate5-cascade-inverse/src/config/Student.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/wxmimperio/pojo/Person.java" afterPath="$PROJECT_DIR$/src/com/wxmimperio/pojo/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/config/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/config/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/HibernateTest.java" afterPath="$PROJECT_DIR$/test/HibernateTest.java" />
-    </list>
+    <list default="true" id="1fab5f23-f14a-41ee-8baa-6ad4d5e3a2a6" name="Default" comment="" />
     <ignored path="hibernate5-hello.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -343,7 +323,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hibernate5-relaction-primary" />
     <property name="js-jscs-nodeInterpreter" value="F:\software\NodeJS\node.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
@@ -868,7 +848,7 @@
       <workItem from="1467642721763" duration="1259000" />
       <workItem from="1467725970357" duration="4582000" />
       <workItem from="1468081235323" duration="2886000" />
-      <workItem from="1468136732216" duration="3239000" />
+      <workItem from="1468136732216" duration="3845000" />
     </task>
     <servers />
   </component>
@@ -905,7 +885,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34171000" />
+    <option name="totallyTimeSpent" value="34777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />

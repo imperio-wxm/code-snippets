@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wxmimperio.pojo">
+    <class name="Person">
+        <id name="id">
+            <!--一对一主键关联-->
+            <!--
+                foreign表示外键
+                关联的是另一张表的主键，而不是自增了
+            -->
+            <generator class="foreign">
+                <param name="property">idCard</param>
+            </generator>
+        </id>
+        <!--实体类的名称（区分大小写）-->
+        <property name="name" type="java.lang.String"></property>
+        <property name="age" type="java.lang.Integer"></property>
+        <!--启用外键约束，constrained="true"-->
+        <one-to-one name="idCard" constrained="true" cascade="save-update"></one-to-one>
+    </class>
+</hibernate-mapping>
