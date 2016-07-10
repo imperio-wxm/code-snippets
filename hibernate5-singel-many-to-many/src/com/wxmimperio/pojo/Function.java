@@ -1,5 +1,8 @@
 package com.wxmimperio.pojo;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by wxmimperio on 2016/7/10.
  */
@@ -8,6 +11,7 @@ public class Function {
     private String name;
     private String code;
     private String url;
+    private Set<Role> roles = new HashSet<Role>();
 
     public Function() {
     }
@@ -16,6 +20,14 @@ public class Function {
         this.name = name;
         this.code = code;
         this.url = url;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     public int getId() {
