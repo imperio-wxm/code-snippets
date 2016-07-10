@@ -10,16 +10,11 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.wxmimperio.pojo">
-    <class name="Student">
+    <class name="StudentCard">
         <id name="id">
             <generator class="native"></generator>
         </id>
-        <!--实体类的名称（区分大小写）-->
-        <property name="name" type="java.lang.String"></property>
-        <property name="age" type="java.lang.Integer"></property>
-        <!--当unique设置为true的时候，可以设置为一对一的关系-->
-        <many-to-one name="studentCard" class="StudentCard" column="stucard_id" foreign-key="fk_stucard"
-                     not-null="true" unique="true" cascade="save-update">
-        </many-to-one>
+        <property name="code" type="java.lang.String"></property>
+        <one-to-one name="student" property-ref="studentCard"></one-to-one>
     </class>
 </hibernate-mapping>

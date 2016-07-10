@@ -8,6 +8,7 @@ public class Person {
     private int id;
     private int age;
     private IdCard idCard;
+    private StudentCard studentCard;
 
     public String getName() {
         return name;
@@ -39,5 +40,13 @@ public class Person {
 
     public void setIdCard(IdCard idCard) {
         this.idCard = idCard;
+    }
+
+    public StudentCard getStudentCard() {
+        return studentCard;
+    }
+
+    public void setStudentCard(StudentCard studentCard) {
+        this.studentCard = studentCard;
     }
 }

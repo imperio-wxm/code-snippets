@@ -26,5 +26,7 @@
         <!--配置hbm.xml文件-->
         <mapping resource="config/IdCard.hbm.xml"></mapping>
         <mapping resource="config/Person.hbm.xml"></mapping>
+        <mapping resource="config/Student.hbm.xml"></mapping>
+        <mapping resource="config/StudentCard.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
