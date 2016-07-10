@@ -15,6 +15,7 @@
             <generator class="native"></generator>
         </id>
         <property name="code" type="java.lang.String"></property>
-        <one-to-one name="student" property-ref="studentCard"></one-to-one>
+        <!--基于主键的单向一对一-->
+        <one-to-one name="student"></one-to-one>
     </class>
 </hibernate-mapping>

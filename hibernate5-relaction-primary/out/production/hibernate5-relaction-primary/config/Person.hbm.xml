@@ -13,6 +13,10 @@
     <class name="Person">
         <id name="id">
             <!--一对一主键关联-->
+            <!--
+                foreign表示外键
+                关联的是另一张表的主键，而不是自增了
+            -->
             <generator class="foreign">
                 <param name="property">idCard</param>
             </generator>
@@ -20,6 +24,7 @@
         <!--实体类的名称（区分大小写）-->
         <property name="name" type="java.lang.String"></property>
         <property name="age" type="java.lang.Integer"></property>
+        <!--启用外键约束，constrained="true"-->
         <one-to-one name="idCard" constrained="true" cascade="save-update"></one-to-one>
     </class>
 </hibernate-mapping>
