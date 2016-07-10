@@ -17,5 +17,10 @@
         <property name="name" type="java.lang.String"></property>
         <property name="code" type="java.lang.Integer"></property>
         <property name="url" type="java.lang.String"></property>
+
+        <set name="roles" table="role_func" cascade="save-update">
+            <key column="fid"></key>
+            <many-to-many column="rid" class="Role"></many-to-many>
+        </set>
     </class>
 </hibernate-mapping>
