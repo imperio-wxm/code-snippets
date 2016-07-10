@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.wxmimperio.pojo">
+    <class name="Role">
+        <id name="id">
+            <generator class="native"></generator>
+        </id>
+        <property name="name" type="java.lang.String"></property>
+
+        <!--
+            新建一张表完成多对多映射关系
+            table="role_func"指明关系表的名称
+            <key column="rid"></key>，指明当前类映射到这张表的主键
+            <many-to-many column="fid" class="Function"></many-to-many>，映射到其他表
+        -->
+        <set name="functions" table="role_func" cascade="save-update">
+            <key column="rid"></key>
+            <many-to-many column="fid" class="Function"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

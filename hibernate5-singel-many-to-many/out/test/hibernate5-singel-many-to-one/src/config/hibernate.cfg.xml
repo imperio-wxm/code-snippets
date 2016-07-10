@@ -1,0 +1,30 @@
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--配置数据库连接信息-->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/my_hibernate</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <!--hibernate可选项-数据库方言-->
+        <!--可以将数据库版本加入MySQL5InnoDBDialect-->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!--配置是否打印SQL语句-->
+        <property name="show_sql">true</property>
+        <!--格式化SQL语句 -->
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <!--配置hbm.xml文件-->
+        <mapping resource="config/Role.hbm.xml"></mapping>
+        <mapping resource="config/Function.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>
