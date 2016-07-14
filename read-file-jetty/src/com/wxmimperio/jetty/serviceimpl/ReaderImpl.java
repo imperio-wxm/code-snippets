@@ -4,12 +4,14 @@ import com.wxmimperio.jetty.pojo.Page;
 import com.wxmimperio.jetty.service.Reader;
 import com.wxmimperio.jetty.utils.FolderUtil;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.RegexFileFilter;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -28,18 +30,24 @@ public class ReaderImpl implements Reader {
         String filename = "";
         int totalLine = 0;
         List<String> content = new ArrayList<String>();
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = null;
+
         try {
             int start = Integer.valueOf(startLine);
             int end = Integer.valueOf(endLine);
-            date = simpleDateFormat.parse("2016-06-25 15:19:24");
-            SimpleDateFormat sdfTxt = new SimpleDateFormat("yyyyMMddHHmmss");
-            String timeStemp = sdfTxt.format(date);
-            System.out.println(timeStemp);
 
-            filename = id + DOT + timeStemp + TXT;
+            /*
+                最初通过设定时间来获取最新的文件
+                date = simpleDateFormat.parse("2016-06-25 15:19:24");
+                SimpleDateFormat sdfTxt = new SimpleDateFormat("yyyyMMddHHmmss");
+                String timeStemp = sdfTxt.format(date);
+                System.out.println(timeStemp);
+            */
+
+            String lastFile = getLastFile(path, id, DOT);
+
+            filename = id + DOT + lastFile + TXT;
 
             File file = new File(path + "/" + filename);
             page.setFilename(filename);
@@ -67,9 +75,24 @@ public class ReaderImpl implements Reader {
 
         } catch (IOException ioException) {
             ioException.printStackTrace();
-        } catch (ParseException parseException) {
-            parseException.printStackTrace();
         }
         return page;
+    }
+
+    private String getLastFile(String path, String id, String txt) {
+        String filepath = "^" + id + ".*" + txt;
+        File dir = new File(path);
+
+        FileFilter fileFilter = new RegexFileFilter(filepath);
+        File[] files = dir.listFiles(fileFilter);
+        List list = new ArrayList();
+
+        for (int i = 0; i < files.length; i++) {
+            list.add(files[i].getName().split("\\.")[1]);
+        }
+        Collections.sort(list);
+        String fileName = list.get(list.size() - 1).toString();
+        System.out.println(fileName);
+        return fileName;
     }
 }

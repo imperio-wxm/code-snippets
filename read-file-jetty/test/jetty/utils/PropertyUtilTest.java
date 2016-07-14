@@ -26,8 +26,11 @@ public class PropertyUtilTest {
 
     @Test
     public void filterFilesTest() {
+        String id = "12399243";
+        String path = "^" + id + ".*.txt";
         File dir = new File("E:/file_test/");
-        FileFilter fileFilter = new RegexFileFilter("^12399243.*.txt");
+
+        FileFilter fileFilter = new RegexFileFilter(path);
         File[] files = dir.listFiles(fileFilter);
         List list = new ArrayList();
 
@@ -35,10 +38,11 @@ public class PropertyUtilTest {
             list.add(files[i].getName().split("\\.")[1]);
         }
         Collections.sort(list);
-        for(int i = 0; i < list.size(); i++) {
+/*        for(int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
-        }
+        }*/
         System.out.println();
-        System.out.println(list.get(list.size()-1));
+        String fileName = list.get(list.size()-1).toString();
+        System.out.println(fileName);
     }
 }
