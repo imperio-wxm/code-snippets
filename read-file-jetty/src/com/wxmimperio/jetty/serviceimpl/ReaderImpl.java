@@ -45,7 +45,7 @@ public class ReaderImpl implements Reader {
                 System.out.println(timeStemp);
             */
 
-            String lastFile = getLastFile(path, id, DOT);
+            String lastFile = FolderUtil.getLastFile(path, id, DOT);
 
             filename = id + DOT + lastFile + TXT;
 
@@ -77,23 +77,5 @@ public class ReaderImpl implements Reader {
             ioException.printStackTrace();
         }
         return page;
-    }
-
-    private String getLastFile(String path, String id, String txt) {
-        String filepath = "^" + id + ".*" + txt;
-        File dir = new File(path);
-
-        FileFilter fileFilter = new RegexFileFilter(filepath);
-        File[] files = dir.listFiles(fileFilter);
-        List list = new ArrayList();
-        String fileName = null;
-
-        for (int i = 0; i < files.length; i++) {
-            list.add(Long.valueOf(files[i].getName().split("\\.")[1]).longValue());
-        }
-        Collections.sort(list);
-        fileName = list.get(list.size() - 1).toString();
-        System.out.println(fileName);
-        return fileName;
     }
 }

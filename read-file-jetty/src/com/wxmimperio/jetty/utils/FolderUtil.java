@@ -1,6 +1,13 @@
 package com.wxmimperio.jetty.utils;
 
+import org.apache.commons.io.filefilter.RegexFileFilter;
 import org.apache.commons.lang.StringUtils;
+
+import java.io.File;
+import java.io.FileFilter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class FolderUtil {
 
@@ -14,5 +21,22 @@ public class FolderUtil {
 	}
 	public static String getLogPath() {
 		return local_log_path;
+	}
+
+	public static String getLastFile(String path, String id, String txt) {
+		String filepath = "^" + id + ".*" + txt;
+		File dir = new File(path);
+
+		FileFilter fileFilter = new RegexFileFilter(filepath);
+		File[] files = dir.listFiles(fileFilter);
+		List list = new ArrayList();
+
+		for (int i = 0; i < files.length; i++) {
+			list.add(Long.valueOf(files[i].getName().split("\\.")[1]).longValue());
+		}
+		Collections.sort(list);
+		String fileName = list.get(list.size() - 1).toString();
+		System.out.println(fileName);
+		return fileName;
 	}
 }
