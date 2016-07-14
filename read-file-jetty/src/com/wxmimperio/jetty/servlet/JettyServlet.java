@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.wxmimperio.jetty.pojo.Page;
-import com.wxmimperio.jetty.pojo.Result;
 import com.wxmimperio.jetty.serviceimpl.ReaderImpl;
 import net.sf.json.JSONObject;
 

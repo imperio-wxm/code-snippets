@@ -17,7 +17,7 @@ public class ActionMain {
 
         param.put("id", "12399243");
         param.put("startLine", "0");
-        param.put("endLine", "60");
+        param.put("endLine", "20");
 
         String jsonStr = HttpClientUtil.doPost("http://localhost:8099/fileServlet", param);
         JSONObject jsonObject = JSONObject.fromObject(jsonStr);
