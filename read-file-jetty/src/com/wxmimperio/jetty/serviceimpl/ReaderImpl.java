@@ -86,12 +86,13 @@ public class ReaderImpl implements Reader {
         FileFilter fileFilter = new RegexFileFilter(filepath);
         File[] files = dir.listFiles(fileFilter);
         List list = new ArrayList();
+        String fileName = null;
 
         for (int i = 0; i < files.length; i++) {
-            list.add(files[i].getName().split("\\.")[1]);
+            list.add(Long.valueOf(files[i].getName().split("\\.")[1]).longValue());
         }
         Collections.sort(list);
-        String fileName = list.get(list.size() - 1).toString();
+        fileName = list.get(list.size() - 1).toString();
         System.out.println(fileName);
         return fileName;
     }
