@@ -28,14 +28,14 @@ public class PropertyUtilTest {
     public void filterFilesTest() {
         String id = "12399243";
         String path = "^" + id + ".*.txt";
-        File dir = new File("E:/file_test/");
+        File dir = new File(PropertyUtil.getInstance().getProperty("local.log.path"));
 
         FileFilter fileFilter = new RegexFileFilter(path);
         File[] files = dir.listFiles(fileFilter);
         List list = new ArrayList();
 
         for (int i = 0; i < files.length; i++) {
-            list.add(files[i].getName().split("\\.")[1]);
+            list.add(Long.valueOf(files[i].getName().split("\\.")[1]).longValue());
         }
         Collections.sort(list);
 /*        for(int i = 0; i < list.size(); i++) {

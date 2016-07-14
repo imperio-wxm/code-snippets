@@ -15,7 +15,7 @@ public class JettyMain {
     private static int port = 8099;
 
     static {
-        //从配置文件读取port
+        //浠庨厤缃枃浠惰鍙杙ort
         String p = PropertyUtil.getInstance().getProperty("jetty.local.port");
         try {
             if (StringUtils.isNotBlank(p)) {

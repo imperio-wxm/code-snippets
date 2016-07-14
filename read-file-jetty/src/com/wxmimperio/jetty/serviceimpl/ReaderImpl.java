@@ -38,7 +38,7 @@ public class ReaderImpl implements Reader {
             int end = Integer.valueOf(endLine);
 
             /*
-                ×î³õÍ¨¹ıÉè¶¨Ê±¼äÀ´»ñÈ¡×îĞÂµÄÎÄ¼ş
+                æœ€åˆé€šè¿‡è®¾å®šæ—¶é—´æ¥è·å–æœ€æ–°çš„æ–‡ä»¶
                 date = simpleDateFormat.parse("2016-06-25 15:19:24");
                 SimpleDateFormat sdfTxt = new SimpleDateFormat("yyyyMMddHHmmss");
                 String timeStemp = sdfTxt.format(date);
@@ -54,15 +54,15 @@ public class ReaderImpl implements Reader {
             if (file.exists() && file.canRead()) {
                 List<String> lines = null;
                 lines = FileUtils.readLines(file, "utf-8");
-                totalLine = lines.size();// ×Ü³¤
+                totalLine = lines.size();// æ€»é•¿
 
-                //3.Ìí¼Ó [start,end) ·¶Î§ÄÚµÄĞĞ
+                //3.æ·»åŠ  [start,end) èŒƒå›´å†…çš„è¡Œ
                 if (end >= totalLine) {
-                    end = totalLine;//·ÀÖ¹ÏÂ±êÔ½½ç
+                    end = totalLine;//é˜²æ­¢ä¸‹æ ‡è¶Šç•Œ
                 }
                 for (int i = 0; i < end; i++) {
                     if (i < start) {
-                        //ÂÔ¹ı¿ªÊ¼ĞĞ
+                        //ç•¥è¿‡å¼€å§‹è¡Œ
                         continue;
                     }
                     content.add(lines.get(i));

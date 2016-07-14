@@ -7,11 +7,11 @@ import java.util.List;
  * Created by weiximing.imperio on 2016/7/14.
  */
 public class Page {
-    private String filename;//ÎÄ¼şÃû
-    private int startLine = 0; // ¿ªÊ¼ĞĞºÅ
-    private int endLine = 0; // ½áÊøĞĞºÅ
-    private int totalLine = 0; // ¹²¶àÉÙĞĞ
-    private List<String> content = new ArrayList<String>(); // ÎÄ±¾ÄÚÈİ
+    private String filename;//æ–‡ä»¶å
+    private int startLine = 0; // å¼€å§‹è¡Œå·
+    private int endLine = 0; // ç»“æŸè¡Œå·
+    private int totalLine = 0; // å…±å¤šå°‘è¡Œ
+    private List<String> content = new ArrayList<String>(); // æ–‡æœ¬å†…å®¹
 
     public String getFilename() {
         return filename;

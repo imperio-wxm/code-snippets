@@ -26,25 +26,20 @@ public class HttpClientUtil {
     private static Log log = LogFactory.getLog(HttpClientUtil.class);
     private static HttpClient httpClient = new DefaultHttpClient();
 
-    /**
-     * @param url
-     * @param param
-     * @return
-     */
     public static String doPost(String url, Map<String, String> param) {
         HttpPost httpPost = new HttpPost(url);
         List<NameValuePair> nvps = new ArrayList<NameValuePair>();
-        StringBuffer urlLog = null;
-
+        StringBuffer urlLog=null;
         try {
             if (MapUtils.isNotEmpty(param)) {
-                urlLog = new StringBuffer();
+                urlLog=new StringBuffer();
                 urlLog.append(url).append("?");
                 for (Entry<String, String> entery : param.entrySet()) {
                     nvps.add(new BasicNameValuePair(entery.getKey(), entery.getValue()));
                     urlLog.append(entery.getKey()).append("=").append(entery.getValue()).append("&");
                 }
-                log.info("#Request URL£º" + urlLog);
+
+                log.info("#Request URLï¼š" + urlLog);
             }
 
             httpPost.setEntity(new UrlEncodedFormEntity(nvps, HTTP.UTF_8));
@@ -53,10 +48,10 @@ public class HttpClientUtil {
             HttpEntity entity = response.getEntity();
             String jsonStr = EntityUtils.toString(entity);
 
-            log.info("#Response£º" + (null != jsonStr && !"".equals(jsonStr) ? jsonStr : code));
+            log.info("#Responseï¼š" + (null != jsonStr && !"".equals(jsonStr) ? jsonStr : code));
             return jsonStr;
         } catch (Exception e) {
-            log.error("#Response error£º" + url + "³ö´í");
+            log.error("#Response errorï¼š" + url + "å‡ºé”™");
             e.printStackTrace();
             return null;
         } finally {
