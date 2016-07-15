@@ -1,10 +1,12 @@
 package jetty.main;
 
+import com.wxmimperio.jetty.pojo.Page;
 import com.wxmimperio.jetty.utils.HttpClientUtil;
 import net.sf.json.JSONObject;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,17 +24,14 @@ public class ActionMain {
         String jsonStr = HttpClientUtil.doPost("http://localhost:8099/fileServlet", param);
         JSONObject jsonObject = JSONObject.fromObject(jsonStr);
 
-        String filename = jsonObject.get("filename").toString();
-        String startLine = jsonObject.get("startLine").toString();
-        String endLine = jsonObject.get("endLine").toString();
-        String totalLine = jsonObject.get("totalLine").toString();
-        String[] content = jsonObject.get("content").toString().split(",");
+        Page page = (Page) JSONObject.toBean(jsonObject, Page.class);
 
-        System.out.println("filename=" + filename);
-        System.out.println("startLine=" + startLine);
-        System.out.println("endLine=" + endLine);
-        System.out.println("size=" + totalLine);
-        for (String line : content) {
+        System.out.println("filename=" + page.getFilename());
+        System.out.println("startLine=" + page.getStartLine());
+        System.out.println("endLine=" + page.getEndLine());
+        System.out.println("size=" + page.getTotalLine());
+        List<String> contentList = page.getContent();
+        for (String line : contentList) {
             System.out.println(line);
         }
     }

@@ -5,6 +5,7 @@ import com.wxmimperio.jetty.service.Reader;
 import com.wxmimperio.jetty.utils.FolderUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.RegexFileFilter;
+import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -46,6 +47,11 @@ public class ReaderImpl implements Reader {
             */
 
             String lastFile = FolderUtil.getLastFile(path, id, DOT);
+
+            if (StringUtils.isBlank(lastFile)) {
+                page.setFilename("类似" + id + "*" + TXT);
+                return page;
+            }
 
             filename = id + DOT + lastFile + TXT;
 

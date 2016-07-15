@@ -27,6 +27,7 @@ public class FolderUtil {
     public static String getLastFile(String path, String id, String txt) {
         String filepath = "^" + id + ".*" + txt;
         File dir = new File(path);
+        String fileName = null;
 
         FileFilter fileFilter = new RegexFileFilter(filepath);
         File[] files = dir.listFiles(fileFilter);
@@ -35,8 +36,12 @@ public class FolderUtil {
         for (int i = 0; i < files.length; i++) {
             list.add(Long.valueOf(files[i].getName().split("\\.")[1]).longValue());
         }
-        Collections.sort(list);
-        String fileName = list.get(list.size() - 1).toString();
+        if (list.size() == 0) {
+            fileName = "";
+        } else {
+            Collections.sort(list);
+            fileName = list.get(list.size() - 1).toString();
+        }
         System.out.println(fileName);
         return fileName;
     }
