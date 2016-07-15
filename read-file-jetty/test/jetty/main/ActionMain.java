@@ -31,8 +31,13 @@ public class ActionMain {
         System.out.println("endLine=" + page.getEndLine());
         System.out.println("size=" + page.getTotalLine());
         List<String> contentList = page.getContent();
-        for (String line : contentList) {
-            System.out.println(line);
+
+        if (page.getContent() != null && page.getContent().size() != 0) {
+            for (String line : contentList) {
+                System.out.println(line);
+            }
+        } else {
+            System.out.println("文件" + page.getFilename() + "不存在或者内容为空");
         }
     }
 }
