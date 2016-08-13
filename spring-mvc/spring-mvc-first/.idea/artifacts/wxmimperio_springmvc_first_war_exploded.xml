@@ -1,12 +1,15 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="spring-mvc-first:war exploded">
+  <artifact type="exploded-war" name="wxmimperio.springmvc.first:war exploded">
     <output-path>$PROJECT_DIR$/target/wxmimperio.springmvc.first</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="spring-mvc-first" />
+          <element id="module-output" name="wxmimperio.springmvc.first" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.1" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.2.RELEASE" />
@@ -39,7 +42,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/wxmimperio.springmvc.first/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="spring-mvc-first/web/Web" />
+      <element id="javaee-facet-resources" facet="wxmimperio.springmvc.first/web/Web" />
     </root>
   </artifact>
 </component>

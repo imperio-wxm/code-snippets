@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="spring-mvc-first:war">
+  <artifact type="war" name="wxmimperio.springmvc.first:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="wxmimperio.springmvc.first.war">
-      <element id="artifact" artifact-name="spring-mvc-first:war exploded" />
+      <element id="artifact" artifact-name="wxmimperio.springmvc.first:war exploded" />
     </root>
   </artifact>
 </component>

@@ -8,6 +8,8 @@ import java.io.IOException;
 
 /**
  * Created by wxmimperio on 2016/8/13.
+ *
+ * HttpServletResponse 处理ajax请求
  */
 @Controller
 public class AjaxController {

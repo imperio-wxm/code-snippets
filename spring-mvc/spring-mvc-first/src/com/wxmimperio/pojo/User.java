@@ -9,6 +9,15 @@ public class User {
     private int age;
     private String gender;
 
+    public User() {
+    }
+
+    public User(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
     public String getName() {
         return name;
     }
