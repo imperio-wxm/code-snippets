@@ -22,9 +22,9 @@
             <key column="rid"></key>，指明当前类映射到这张表的主键
             <many-to-many column="fid" class="Function"></many-to-many>，映射到其他表
         -->
-        <set name="functions" table="role_func" cascade="save-update">
+        <!--<set name="functions" table="role_func" cascade="save-update">
             <key column="rid"></key>
             <many-to-many column="fid" class="Function"></many-to-many>
-        </set>
+        </set>-->
     </class>
 </hibernate-mapping>

@@ -25,6 +25,6 @@
         <property name="hbm2ddl.auto">update</property>
         <!--配置hbm.xml文件-->
         <mapping resource="config/Role.hbm.xml"></mapping>
-        <mapping resource="config/Function.hbm.xml"></mapping>
+        <!--<mapping resource="config/Function.hbm.xml"></mapping>-->
     </session-factory>
 </hibernate-configuration>

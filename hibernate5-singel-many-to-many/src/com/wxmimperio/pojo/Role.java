@@ -9,7 +9,7 @@ import java.util.Set;
 public class Role {
     private int id;
     private String name;
-    private Set<Function> functions = new HashSet<Function>();
+    //private Set<Function> functions = new HashSet<Function>();
 
     public int getId() {
         return id;
@@ -27,11 +27,11 @@ public class Role {
         this.name = name;
     }
 
-    public Set<Function> getFunctions() {
+    /*public Set<Function> getFunctions() {
         return functions;
     }
 
     public void setFunctions(Set<Function> functions) {
         this.functions = functions;
-    }
+    }*/
 }

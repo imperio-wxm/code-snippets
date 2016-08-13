@@ -5,6 +5,8 @@ import com.wxmimperio.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 /**
  * Created by wxmimperio on 2016/7/2.
  */
@@ -27,7 +29,7 @@ public class HibernateTest {
         }
     }
 
-    @Test
+    /*@Test
     public void testSave() {
         Session session = null;
         Transaction transaction = null;
@@ -59,6 +61,36 @@ public class HibernateTest {
             session.save(role2);
 
             transaction.commit();
+        } catch (Exception e) {
+            transaction.rollback();
+        } finally {
+            //游离状态
+            HibernateUtil.closeSession();
+            HibernateUtil.closeSessionFactory();
+        }
+    }*/
+
+    @Test
+    public void testGet() {
+        Session session = null;
+        Transaction transaction = null;
+
+        try {
+            session = HibernateUtil.getSession();
+            transaction = HibernateUtil.getTransaction(session);
+
+            Role role1 = new Role();
+            role1.setName("admin");
+            Role role2 = new Role();
+            role2.setName("user");
+
+            session.save(role1);
+            session.save(role2);
+            transaction.commit();
+
+            String hql = " FROM Role WHERE id =:id ";
+            System.out.println(session.createQuery(hql).setParameter("id",2).list().size()>0);
+
         } catch (Exception e) {
             transaction.rollback();
         } finally {
