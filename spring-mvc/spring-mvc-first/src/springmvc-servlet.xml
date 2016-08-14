@@ -59,5 +59,17 @@
             <mvc:mapping path="/**"/>
             <bean class="com.wxmimperio.interceptor.MyInterceptor"/>
         </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/jsp/login/**"/>
+            <bean class="com.wxmimperio.interceptor.LoginInterceptor">
+                <!--注入拦截-->
+                <property name="allowedPass">
+                    <list>
+                        <value>login.do</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:interceptor>
     </mvc:interceptors>
 </beans>
