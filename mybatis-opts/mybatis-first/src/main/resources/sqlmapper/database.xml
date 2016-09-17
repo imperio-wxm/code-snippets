@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace命名空间，作用就是对sql进行分类管理，理解sql的隔离-->
+<mapper namespace="database">
+    <!--在映射文件中配置sql语句-->
+    <!--id为statement的id，会封装到mapper的statement对象中-->
+    <select id="findUserById" parameterType="int" resultType="com.wxmimperio.mybatis.pojo.Consumer">
+      SELECT * FROM consumer WHERE id=#{id};
+    </select>
+</mapper>
