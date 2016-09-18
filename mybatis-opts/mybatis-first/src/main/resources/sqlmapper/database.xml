@@ -9,4 +9,9 @@
     <select id="findUserById" parameterType="int" resultType="com.wxmimperio.mybatis.pojo.Consumer">
       SELECT * FROM consumer WHERE id=#{id};
     </select>
+
+    <!--${}中只能使用value-->
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.wxmimperio.mybatis.pojo.Consumer">
+        SELECT * FROM  consumer WHERE username LIKE '%${value}%'
+    </select>
 </mapper>

@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by wxmimperio on 2016/9/17.
@@ -45,5 +47,36 @@ public class SelectOne {
             }
         }
         return consumer;
+    }
+
+    public static List<Consumer> findByName() {
+        List<Consumer> consumers = new ArrayList<Consumer>();
+
+        String xml = "mybatis-config.xml";
+
+        //1.创建会话工厂，传入mybatis的配置信息
+        InputStream inputStream = null;
+        SqlSession sqlSession = null;
+        try {
+            inputStream = Resources.getResourceAsStream(xml);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+            //2.得到sqlsession
+            sqlSession = sqlSessionFactory.openSession();
+
+            consumers = sqlSession.selectList("database.findUserByName", "1");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert inputStream != null;
+                inputStream.close();
+                assert sqlSession != null;
+                sqlSession.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return consumers;
     }
 }
