@@ -4,6 +4,7 @@ import com.wxmimperio.mybatis.pojo.Consumer;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by wxmimperio on 2016/9/18.
@@ -13,6 +14,8 @@ public class SelectOneTest {
     @Test
     public void selectByIdTest() {
         SelectOne.selectById();
+        /*UUID的生成
+        System.out.println(UUID.randomUUID().toString());*/
     }
 
     @Test

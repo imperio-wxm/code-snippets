@@ -17,6 +17,11 @@
 
     <!--通过OGNL获取对象的属性值-->
     <insert id="insertConsumer" parameterType="com.wxmimperio.mybatis.pojo.Consumer">
+
+        /*将插入的记录id返回，并放入对象中*/
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select currval('public.consumer_id_seq')
+        </selectKey>
         INSERT INTO consumer(username,password) VALUES(#{username},#{password})
     </insert>
 </mapper>

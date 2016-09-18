@@ -101,6 +101,8 @@ public class SelectOne {
 
             //手动提交
             sqlSession.commit();
+
+            System.out.println("插入之后取得id=" + consumer.getId());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
