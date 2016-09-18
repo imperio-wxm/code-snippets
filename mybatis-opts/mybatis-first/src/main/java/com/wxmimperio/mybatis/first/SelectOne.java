@@ -79,4 +79,40 @@ public class SelectOne {
         }
         return consumers;
     }
+
+    public static boolean insertInto() {
+        String xml = "mybatis-config.xml";
+
+        //1.创建会话工厂，传入mybatis的配置信息
+        InputStream inputStream = null;
+        SqlSession sqlSession = null;
+
+        Consumer consumer = new Consumer();
+        try {
+            inputStream = Resources.getResourceAsStream(xml);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+            //2.得到sqlsession
+            sqlSession = sqlSessionFactory.openSession();
+            consumer.setUsername("insert user1");
+            consumer.setPassword(".......");
+
+            sqlSession.insert("database.insertConsumer", consumer);
+
+            //手动提交
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert inputStream != null;
+                inputStream.close();
+                assert sqlSession != null;
+                sqlSession.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
+    }
 }

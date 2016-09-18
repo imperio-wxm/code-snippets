@@ -22,4 +22,10 @@ public class SelectOneTest {
             System.out.println("id=" + consumer.getId() + " username=" + consumer.getUsername() + " password=" + consumer.getPassword());
         }
     }
+
+    @Test
+    public void insertIntoTest() {
+        boolean flag = SelectOne.insertInto();
+        System.out.println(flag);
+    }
 }
