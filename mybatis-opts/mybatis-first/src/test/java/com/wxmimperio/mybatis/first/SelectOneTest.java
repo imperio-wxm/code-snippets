@@ -31,4 +31,16 @@ public class SelectOneTest {
         boolean flag = SelectOne.insertInto();
         System.out.println(flag);
     }
+
+    @Test
+    public void deleteByIdTest() {
+        boolean flag = SelectOne.deleteById();
+        System.out.println(flag);
+    }
+
+    @Test
+    public void updateTest() {
+        boolean flag = SelectOne.updateInto();
+        System.out.println(flag);
+    }
 }

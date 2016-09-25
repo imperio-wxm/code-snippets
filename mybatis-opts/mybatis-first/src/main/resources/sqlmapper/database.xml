@@ -24,4 +24,14 @@
         </selectKey>
         INSERT INTO consumer(username,password) VALUES(#{username},#{password})
     </insert>
+
+    <!--通过id删除-->
+    <delete id="deleteOrder" parameterType="java.lang.Integer">
+        DELETE FROM orders where id=#{id}
+    </delete>
+
+    <!--通过id更新-->
+    <update id="updateConsumer" parameterType="com.wxmimperio.mybatis.pojo.Consumer">
+        update consumer set username=#{username},password=#{password} where id=#{id}
+    </update>
 </mapper>

@@ -117,4 +117,73 @@ public class SelectOne {
         }
         return true;
     }
+
+    public static boolean deleteById() {
+        String xml = "mybatis-config.xml";
+
+        //1.创建会话工厂，传入mybatis的配置信息
+        InputStream inputStream = null;
+        SqlSession sqlSession = null;
+
+        try {
+            inputStream = Resources.getResourceAsStream(xml);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+            //2.得到sqlsession
+            sqlSession = sqlSessionFactory.openSession();
+            sqlSession.delete("database.deleteOrder", 1);
+
+            //手动提交
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert inputStream != null;
+                inputStream.close();
+                assert sqlSession != null;
+                sqlSession.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
+    }
+
+    public static boolean updateInto() {
+        String xml = "mybatis-config.xml";
+
+        //1.创建会话工厂，传入mybatis的配置信息
+        InputStream inputStream = null;
+        SqlSession sqlSession = null;
+
+        Consumer consumer = new Consumer();
+        try {
+            inputStream = Resources.getResourceAsStream(xml);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+            //2.得到sqlsession
+            sqlSession = sqlSessionFactory.openSession();
+            consumer.setId(1);
+            consumer.setUsername("update consumer");
+            consumer.setPassword("update password");
+
+            sqlSession.insert("database.updateConsumer", consumer);
+
+            //手动提交
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert inputStream != null;
+                inputStream.close();
+                assert sqlSession != null;
+                sqlSession.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
+    }
 }
