@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace命名空间，作用就是对sql进行分类管理，理解sql的隔离-->
+<mapper namespace="com.wxmimperio.mybatis.mapper.ConsumerMapper">
+    <!--在映射文件中配置sql语句-->
+    <!--id为statement的id，会封装到mapper的statement对象中-->
+    <select id="findUserById" parameterType="java.lang.Integer" resultType="com.wxmimperio.mybatis.pojo.Consumer">
+      SELECT * FROM consumer WHERE id=#{id}
+    </select>
+
+    <!--${}中只能使用value-->
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.wxmimperio.mybatis.pojo.Consumer">
+        SELECT * FROM  consumer WHERE username LIKE '%${value}%'
+    </select>
+
+    <!--通过OGNL获取对象的属性值-->
+    <insert id="insertConsumer" parameterType="com.wxmimperio.mybatis.pojo.Consumer">
+
+        /*将插入的记录id返回，并放入对象中*/
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            select currval('public.consumer_id_seq')
+        </selectKey>
+        INSERT INTO consumer(username,password) VALUES(#{username},#{password})
+    </insert>
+
+    <!--通过id删除-->
+    <delete id="deleteOrder" parameterType="java.lang.Integer">
+        DELETE FROM orders where id=#{id}
+    </delete>
+
+    <!--通过id更新-->
+    <update id="updateConsumer" parameterType="com.wxmimperio.mybatis.pojo.Consumer">
+        update consumer set username=#{username},password=#{password} where id=#{id}
+    </update>
+</mapper>
