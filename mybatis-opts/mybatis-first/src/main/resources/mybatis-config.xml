@@ -3,9 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
     <!--加载properties-->
     <properties resource="db.properties" />
+
+    <!--别名-->
+    <typeAliases>
+        <!--针对单个的别名定义-->
+        <!--<typeAlias type="com.wxmimperio.mybatis.pojo.Consumer" alias="consumer" />-->
+
+        <!--自动定义别名，别名为类名首字母小写-->
+        <package name="com.wxmimperio.mybatis.pojo" />
+    </typeAliases>
 
     <!--数据库连接池-->
     <environments default="development">
