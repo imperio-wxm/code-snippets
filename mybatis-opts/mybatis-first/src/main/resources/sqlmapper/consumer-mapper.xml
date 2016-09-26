@@ -4,6 +4,15 @@
 
 <!--namespace命名空间，作用就是对sql进行分类管理，理解sql的隔离-->
 <mapper namespace="com.wxmimperio.mybatis.mapper.ConsumerMapper">
+
+    <!--用户综合查询-->
+
+    <select id="findConsumerList" parameterType="consumerQueryVo" resultType="consumerExtend">
+        SELECT * FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
+    </select>
+
+
+
     <!--在映射文件中配置sql语句-->
     <!--id为statement的id，会封装到mapper的statement对象中-->
     <select id="findUserById" parameterType="java.lang.Integer" resultType="consumer">

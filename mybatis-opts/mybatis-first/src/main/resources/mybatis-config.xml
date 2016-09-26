@@ -27,6 +27,8 @@
             </dataSource>
         </environment>
     </environments>
+
+    <!--通过resource方法，一次加载一个映射文件-->
     <mappers>
         <mapper resource="sqlmapper/database.xml"/>
         <mapper resource="sqlmapper/consumer-mapper.xml"/>
