@@ -5,6 +5,16 @@
 <!--namespace命名空间，作用就是对sql进行分类管理，理解sql的隔离-->
 <mapper namespace="com.wxmimperio.mybatis.mapper.ConsumerMapper">
 
+    <!--定义sql片段-->
+    <!--通常定义sql片段，基于单表定义；且不要包含where-->
+    <sql id="consumerSQL">
+        <if test="consumerExtend != null">
+            <if test="consumerExtend.password != null">
+                AND password LIKE '%${consumerExtend.password}%';
+            </if>
+        </if>
+    </sql>
+
     <!--定义resultMap-->
     <resultMap id="consumerResultMap" type="consumer">
         <!--id 为查询结果集中唯一标识-->
@@ -37,10 +47,13 @@
             </if>
         </where>
     </select>
-    
+
     <!--使用resultMap进行映射-->
     <select id="findConsumerMap" parameterType="consumerQueryVo" resultMap="consumerResultMap">
-        SELECT id consumer_id,username consumer_username,password consumer_password FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
+        SELECT id consumer_id,username consumer_username,password consumer_password FROM consumer
+        <where>
+            <include refid="consumerSQL"/>
+        </where>
     </select>
 
 
