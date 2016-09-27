@@ -5,8 +5,19 @@
 <!--namespace命名空间，作用就是对sql进行分类管理，理解sql的隔离-->
 <mapper namespace="com.wxmimperio.mybatis.mapper.ConsumerMapper">
 
-    <!--用户综合查询-->
+    <!--定义resultMap-->
+    <resultMap id="consumerResultMap" type="consumer">
+        <!--id 为查询结果集中唯一标识-->
+        <!--conlum为表中的列名，propertry为pojo中的属性名-->
+        <id column="consumer_id" property="id"/>
 
+        <!--result为普通列的定义-->
+        <result column="consumer_username" property="username"/>
+        <result column="consumer_password" property="password"/>
+    </resultMap>
+
+
+    <!--用户综合查询-->
     <select id="findConsumerList" parameterType="consumerQueryVo" resultType="consumerExtend">
         SELECT * FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
     </select>
@@ -14,6 +25,11 @@
     <!--用户综合查询总数-->
     <select id="findConsumerCount" parameterType="consumerQueryVo" resultType="int">
         SELECT COUNT (1) FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
+    </select>
+    
+    <!--使用resultMap进行映射-->
+    <select id="findConsumerMap" parameterType="consumerQueryVo" resultMap="consumerResultMap">
+        SELECT id consumer_id,username consumer_username,password consumer_password FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
     </select>
 
 
