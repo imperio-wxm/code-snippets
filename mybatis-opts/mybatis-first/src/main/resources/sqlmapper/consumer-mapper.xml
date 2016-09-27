@@ -23,8 +23,19 @@
     </select>
 
     <!--用户综合查询总数-->
-    <select id="findConsumerCount" parameterType="consumerQueryVo" resultType="int">
+    <!--<select id="findConsumerCount" parameterType="consumerQueryVo" resultType="int">
         SELECT COUNT (1) FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
+    </select>-->
+    <!--动态sql拼接-->
+    <select id="findConsumerCount" parameterType="consumerQueryVo" resultType="int">
+        SELECT COUNT (1) FROM consumer
+        <where>
+            <if test="consumerExtend != null">
+                <if test="consumerExtend.password != null">
+                    AND password LIKE '%${consumerExtend.password}%';
+                </if>
+            </if>
+        </where>
     </select>
     
     <!--使用resultMap进行映射-->
