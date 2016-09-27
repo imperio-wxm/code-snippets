@@ -11,6 +11,10 @@
         SELECT * FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
     </select>
 
+    <!--用户综合查询总数-->
+    <select id="findConsumerCount" parameterType="consumerQueryVo" resultType="int">
+        SELECT COUNT (1) FROM consumer WHERE password LIKE '%${consumerExtend.password}%';
+    </select>
 
 
     <!--在映射文件中配置sql语句-->

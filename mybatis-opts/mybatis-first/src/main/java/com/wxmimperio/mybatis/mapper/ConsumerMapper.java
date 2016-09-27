@@ -14,6 +14,9 @@ public interface ConsumerMapper {
     //信息综合查询
     List<ConsumerExtend> findConsumerList(ConsumerQueryVo consumerQueryVo) throws Exception;
 
+    //综合信息总数
+    int findConsumerCount(ConsumerQueryVo consumerQueryVo) throws Exception;
+
     //根据id查询用户信息
     Consumer findUserById(int id) throws Exception;
 

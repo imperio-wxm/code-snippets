@@ -60,4 +60,19 @@ public class MapperTest {
         }
 
     }
+
+    @Test
+    public void consumerCountTest() throws Exception {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //通过mapper反射获取map per对象
+        ConsumerMapper consumerMapper = sqlSession.getMapper(ConsumerMapper.class);
+        ConsumerExtend consumerExtend = new ConsumerExtend();
+        consumerExtend.setPassword("123");
+        ConsumerQueryVo consumerQueryVo = new ConsumerQueryVo();
+        consumerQueryVo.setConsumerExtend(consumerExtend);
+
+        int consumerCount = consumerMapper.findConsumerCount(consumerQueryVo);
+        System.out.println(consumerCount);
+
+    }
 }
