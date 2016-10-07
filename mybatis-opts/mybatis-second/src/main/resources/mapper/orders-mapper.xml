@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wxmimperio.mybatis.mapper.OrderConsumerMapper">
+    <!--查询订单关联查询用户-->
+    <select id="findOrdersConsumer" resultType="com.wxmimperio.mybatis.pojo.OrderConsumer">
+        SELECT orders.*,consumer.username,consumer.password FROM orders,consumer
+          WHERE orders.consumerid = consumer.id;
+    </select>
+</mapper>

@@ -7,6 +7,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mybatis-first</module>
+        <module>mybatis-second</module>
     </modules>
     <packaging>pom</packaging>
 
